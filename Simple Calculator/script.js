@@ -1,5 +1,5 @@
-function appendToResult(value) {
-    document.getElementById('result').value += value;
+function appendToResult(val) {
+    document.getElementById('result').value += val;
 }
 
 function clearResult() {
