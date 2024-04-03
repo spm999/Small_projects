@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Set a default font family */
+}
+
+#main-container {
+    width: 300px; /* Adjusted width */
+    height: 400px; /* Adjusted height */
+    padding: 20px; /* Adjusted padding */
+    background-color: aquamarine;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px; /* Adds rounded corners to the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+}
+
+#output {
+    background-color: blanchedalmond;
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 10px; /* Adds space between output and buttons */
+    text-align: right; /* Aligns text to the right */
+    font-size: 20px; /* Adjusted font size */
+    border: 1px solid #ccc; /* Adds a border */
+    border-radius: 5px; /* Adds rounded corners */
+}
+
+#button {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates a grid layout with 4 columns */
+    gap: 5px; /* Adds space between buttons */
+}
+
+button {
+    padding: 15px; /* Adjusted padding */
+    font-size: 16px; /* Adjusted font size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    background-color: #f0f0f0; /* Sets background color for buttons */
+    border: none;
+    border-radius: 5px; /* Adds rounded corners to buttons */
+}
+
+button:hover {
+    background-color: #e0e0e0; /* Darkens button color on hover */
+}
+
+button:active {
+    background-color: #d0d0d0; /* Darkens button color when clicked */
+}

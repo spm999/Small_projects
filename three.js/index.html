@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { margin: 0; }
+     </style>
+</head>
+<body>
+    
+
+    <script src="https://threejs.org/build/three.js"></script>
+
+    <script>
+
+// Set up the scene
+var scene = new THREE.Scene();
+
+// Set up the camera
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 5;
+
+// Set up the renderer
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Create a cube
+var geometry = new THREE.BoxGeometry();
+var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+var cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+// Create a game loop
+var animate = function () {
+   requestAnimationFrame(animate);
+
+   // Rotate the cube
+   cube.rotation.x += 0.01;
+   cube.rotation.y += 0.01;
+
+   // Render the scene
+   renderer.render(scene, camera);
+};
+
+// Start the animation loop
+animate();
+// Example: Adding a Point Light
+var light = new THREE.PointLight(0xffffff);
+light.position.set(5, 5, 5);
+scene.add(light);
+
+
+    </script>
+</body>
+</html>

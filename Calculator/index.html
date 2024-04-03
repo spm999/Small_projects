@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div id="main-container">
+        <div id="output">0</div>
+        <div id="button">
+            <button class="digit">0</button>
+            <button class="digit">1</button>
+            <button class="digit">2</button>
+            <button class="digit">3</button>
+            <button class="digit">4</button>
+            <button class="digit">5</button>
+            <button class="digit">6</button>
+            <button class="digit">7</button>
+            <button class="digit">8</button>
+            <button class="digit">9</button>
+            <button class="signs">+</button>
+            <button class="signs">-</button>
+            <button class="signs">*</button>
+            <button class="signs">/</button>
+            <button class="signs">%</button>
+            <button id="clear">C</button>
+            <button id="calculate">=</button>
+        </div>
+    </div>
+    <script>
+        const output = document.getElementById('output');
+        const buttons = document.querySelectorAll('#button button');
+
+        let currentInput = '';
+        let calculation = '';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.textContent;
+                if (value === 'C') {
+                    clear();
+                } else if (value === '=') {
+                    calculate();
+                } else {
+                    currentInput += value;
+                    output.textContent = currentInput;
+                }
+            });
+        });
+
+        function clear() {
+            currentInput = '';
+            calculation = '';
+            output.textContent = '0';
+        }
+
+        function calculate() {
+            let result;
+            try {
+                result = eval(currentInput);
+                if (!isFinite(result)) {
+                    throw new Error('Invalid expression');
+                }
+                output.textContent = result;
+            } catch (error) {
+                output.textContent = 'Error';
+            }
+            currentInput = '';
+            calculation = '';
+        }
+    </script>
+</body>
+
+</html>

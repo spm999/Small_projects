@@ -1,0 +1,50 @@
+body{
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:100vh;
+    justify-content: center;
+    background: url("gg.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+h2{
+    background-color:rgba(255, 255, 255, 0.886);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size:44px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+}
+.clock{
+    display: flex;
+    background-color:rgba(13, 13, 255, 0.452);
+    opacity:0.9;
+}
+.clock div{
+    margin:5px;
+    width:100%;
+
+}
+.clock span{
+    width: 200px;
+    height:80px;
+    background:rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 50px;
+}
+.clock .text{
+    height:30px;
+    font-size:10px;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    background: rgb(254, 254, 255);
+    opacity:0.8;
+
+}

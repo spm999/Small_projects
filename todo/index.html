@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Delete Button</title>
+    <style>
+        /* Styles for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #taskList {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        button.deleteBtn {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById("taskInput").value;
+            if (taskInput.trim() === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            var taskList = document.getElementById("taskList");
+            var li = document.createElement("li");
+            li.textContent = taskInput;
+
+            var deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "deleteBtn";
+            deleteBtn.onclick = function() {
+                li.remove();
+            };
+
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+            document.getElementById("taskInput").value = "";
+        }
+    </script>
+</body>
+</html>
